@@ -6,11 +6,11 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:05:05 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:05:07 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:27:50 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../inc/minishell.h"
 #include <unistd.h>
 
 int	do_single_builtin(t_cmd *cmd, t_shell *shell)

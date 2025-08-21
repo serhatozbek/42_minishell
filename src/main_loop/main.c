@@ -6,11 +6,11 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:06:27 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:06:29 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:28:39 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../inc/minishell.h"
 #include <unistd.h>
 
 volatile sig_atomic_t	g_sigint_recived = 0;

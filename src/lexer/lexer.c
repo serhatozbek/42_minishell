@@ -6,12 +6,12 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:05:53 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:05:55 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:28:24 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-#include "libft/libft.h"
+#include "../../inc/minishell.h"
+#include "../../inc/libft/libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -6,12 +6,12 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:04:10 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:04:12 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:27:03 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-#include "libft/libft.h"
+#include "../../inc/minishell.h"
+#include "../../inc/libft/libft.h"
 #include <stdlib.h>
 
 static char	**create_new_env_without_var(char **old_env, int count,

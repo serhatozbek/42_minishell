@@ -6,11 +6,11 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:06:40 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:06:42 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:28:50 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../inc/minishell.h"
 #include <stdio.h>
 
 void	error_exit(int status, t_shell *shell)

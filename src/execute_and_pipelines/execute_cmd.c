@@ -6,11 +6,11 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:04:21 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:04:23 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:27:14 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../inc/minishell.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

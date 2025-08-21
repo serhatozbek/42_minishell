@@ -6,11 +6,11 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:05:59 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:06:00 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:28:28 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../inc/minishell.h"
 #include <stdlib.h>
 
 static t_token	*handle_token_deletion(t_token **head, t_token *prev,

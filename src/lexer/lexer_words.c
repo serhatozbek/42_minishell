@@ -6,11 +6,11 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:05:48 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:05:50 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:28:16 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../../inc/minishell.h"
 #include <stdlib.h>
 
 t_token	*new_token(t_token_type type, char *value, char quote)

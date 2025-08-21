@@ -6,12 +6,12 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:05:10 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:05:13 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:33:56 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-#include "libft/libft.h"
+#include "../../inc/minishell.h"
+#include "../../inc/libft/libft.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -49,7 +49,7 @@ static void	read_lines_to_pipe(t_redir *redir, int write_fd, t_exec_data *data)
 	signal(SIGINT, heredoc_sigint_handler);
 	while (1)
 	{
-		line = readline("> ");
+		line = readline("\033[1;31m> \033[0m");
 		if (!line && g_sigint_recived != 2)
 		{
 			fprintf(stderr, "%send-of-file (wanted `%s')\n", error,

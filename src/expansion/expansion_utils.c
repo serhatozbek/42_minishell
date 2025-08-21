@@ -6,12 +6,12 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:05:19 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:05:21 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:27:58 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-#include "libft/libft.h"
+#include "../../inc/minishell.h"
+#include "../../inc/libft/libft.h"
 #include <stdlib.h>
 
 char	*get_env_value(char *key, char **env)

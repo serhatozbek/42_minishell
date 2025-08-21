@@ -6,12 +6,12 @@
 /*   By: sozbek <sozbek@student.kocaeli.42.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 04:06:20 by sozbek            #+#    #+#             */
-/*   Updated: 2025/08/21 04:06:22 by sozbek           ###   ########.fr       */
+/*   Updated: 2025/08/21 04:31:55 by sozbek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
-#include "libft/libft.h"
+#include "../../inc/minishell.h"
+#include "../../inc/libft/libft.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <readline/readline.h>
@@ -100,7 +100,7 @@ int	bash_loop(t_shell *shell)
 	while (1)
 	{
 		g_sigint_recived = 0;
-		line = readline("ellibash~>");
+		line = readline("\033[1;37melli\033[1;31mbash\033[1;37m~> \033[0m");
 		if (!line)
 			handle_eof(shell);
 		if (process_line(shell, line) == EXIT_SHELL)
