@@ -1,5 +1,8 @@
-## 🤖 Minishell  - Bir Unix Kabuğunun Yeniden Doğuşu | Ecole 42 ![ElliBash](https://img.shields.io/badge/Elli-bash-red?style=for-the-badge&logoColor=white&labelColor=gray)
+<p align="center">
+  <img src="https://img.shields.io/badge/Elli-bash-red?style=for-the-badge&logoColor=white&labelColor=gray" alt="ElliBash Prompt"/>
+</p>
 
+## 🤖 Minishell  - Bir Unix Kabuğunun Yeniden Doğuşu | Ecole 42
 Bu repository, 42 müfredatının zirve projelerinden biri olan minishell'in geliştirme sürecini ve sonuçlarını sunmaktadır. Bu proje, ekip arkadaşım **Oktay Çubukcu** (ocubukcu) ile birlikte yürüttüğümüz, bash gibi bir Unix kabuğunun C dilinde sıfırdan implemente edildiği teknik bir çalışmadır. Bu proje, sadece bir kodlama görevi değil, aynı zamanda iki kişilik bir ekibin karmaşık bir sistem üzerinde nasıl uyum içinde çalışabileceğinin, sorunları nasıl birlikte çözebileceğinin ve ortak bir mühendislik vizyonu oluşturabildiğinin bir kanıtıdır.
 
 ---
