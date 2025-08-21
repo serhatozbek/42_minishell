@@ -62,6 +62,7 @@ Projenin geliştirilmesi, 42 tarafından belirlenen katı kurallar çerçevesind
 ---
 
 ### ⚙️ Kullanım Talimatları
+
 **Derleme**
 ```Bash
 
@@ -71,6 +72,53 @@ make
 ```Bash
 
 ./minishell
+```
+---
+
+## Bellek Yönetimi ve Sızıntı Kontrolü (Valgrind)
+
+Minishell projesinin en kritik gereksinimlerinden biri, kendi yazdığımız kodda hiçbir bellek sızıntısı (leak) veya açık dosya tanımlayıcısı (FD) bırakmamaktır. readline kütüphanesi, kendi doğası gereği bazı bellek blokları ayırır ve valgrind'de "gürültü" olarak adlandırabileceğimiz bazı hatalar rapor edebilir.
+
+Bu "gürültüyü" genel komutlarla bastırmak yerine, projemizde çok daha rafine bir yaklaşım benimsenmiştir: Valgrind Suppression File. Bu yöntemle, sadece ve sadece readline kütüphanesinden kaynaklandığını bildiğimiz spesifik hata ve sızıntıları, ignore-readline.supp adında bir dosyada tanımlayarak valgrind'in bunları görmezden gelmesini sağlarız. **Proje dizininde bahsettiğimiz dosya mevcut onunla deneyebilir ve dosyayı inceleyebilirsiniz**.Bu, kendi kodumuzdaki en ufak bir hatayı bile gözden kaçırmamamızı garanti altına alır.
+
+Projenin bellek ve FD yönetimini bu hassas yöntemle test etmek için aşağıdaki komut kullanılır:
+
+```Bash
+
+valgrind --leak-check=full --show-leak-kinds=all --suppressions=ignore-readline.supp --track-fds=yes ./minishell
+```
+**Komut Açıklaması:**
+
++ **--leak-check=full:** Mümkün olan en detaylı bellek sızıntısı kontrolünü yapar.
+
++ **--show-leak-kinds=all:** Sadece kesin sızıntıları değil, still reachable dahil tüm sızıntı türlerini gösterir. Bu, tam bir rapor almak için önemlidir.
+
++ **--suppressions=ignore-readline.supp:** Bu, en kritik bayraktır. valgrind'e, proje dizininde bulunan ignore-readline.supp dosyasını okumasını ve bu dosya içinde tanımlanmış olan tüm hata/sızıntı raporlarını görmezden gelmesini söyler. Böylece readline'ın bilinen "hataları" rapordan temizlenir.
+
++ **--track-fds=yes:** Program sonlandığında hala açık olan dosya tanımlayıcılarını (FD) raporlar. Bu, pipe ve yönlendirmelerdeki kaynak yönetimimizin doğruluğunu test etmek için hayati önem taşır.
+
+**Bu komutla yapılan testlerde "All heap blocks were freed -- no leaks are possible" ve "FILE DESCRIPTORS: 3 open" (stdin, stdout, stderr) sonucunu almak, projenin kaynak yönetimindeki mutlak başarısını gösterir.**
+
+```bash
+
+ellibash~> exit
+exit
+==49119== 
+==49119== FILE DESCRIPTORS: 3 open (3 std) at exit.
+==49119== 
+==49119== HEAP SUMMARY:
+==49119==     in use at exit: 232,863 bytes in 234 blocks
+==49119==   total heap usage: 522 allocs, 288 frees, 257,709 bytes allocated
+==49119== 
+==49119== LEAK SUMMARY:
+==49119==    definitely lost: 0 bytes in 0 blocks
+==49119==    indirectly lost: 0 bytes in 0 blocks
+==49119==      possibly lost: 0 bytes in 0 blocks
+==49119==    still reachable: 0 bytes in 0 blocks
+==49119==         suppressed: 232,863 bytes in 234 blocks
+==49119== 
+==49119== For lists of detected and suppressed errors, rerun with: -s
+==49119== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 ---
 
